@@ -1,6 +1,3 @@
-import { GetStaticProps } from "next";
-import { GlobalStyle } from "../styles/GlobalStyle";
-
 export default function apod({img}) {
     return (
         <> 
@@ -17,6 +14,7 @@ export default function apod({img}) {
 }
 
 export const getStaticProps = async () => {
+    
     const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.NASA_KEY}`);
     const data = await response.json();
 

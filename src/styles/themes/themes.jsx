@@ -1,7 +1,7 @@
 export const Light = {
    
     primary: '#8301B7',
-    secondary: '#333',
+    secondary: '#A939DC',
     background: '#f5f5f5',
     text: '#333',
 
@@ -10,7 +10,7 @@ export const Light = {
 export const Dark = {
     
     primary: '#8301B7',
-    secondary: '#f5f5f5',
+    secondary: '#A939DC',
     background: '#333',
     text: '#f5f5f5',
 

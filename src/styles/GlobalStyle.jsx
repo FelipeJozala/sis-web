@@ -7,10 +7,6 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
-    ul, a {
-        text-decoration: none;
-        list-style: none;
-    }
 
     body {
         width: 100vw;
@@ -18,5 +14,10 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 1rem;
         color: ${({ theme }) => theme.text};
         font-family: sans-serif;
+    }
+
+    ul, a {
+        text-decoration: none;
+        list-style: none;
     }
 `
