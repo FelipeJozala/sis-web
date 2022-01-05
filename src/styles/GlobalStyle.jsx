@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+
     *{
         margin: 0;
         padding: 0;
@@ -14,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 1rem;
         color: ${({ theme }) => theme.text};
         font-family: sans-serif;
+        letter-spacing: 1.5px;
     }
 
     ul, a {

@@ -1,6 +1,13 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { BurgueMenu, LeftContainer, NavContainer, RightContainer, Brand, MobileMenu } from './styles'
+import Image from "next/image";
+import { BurgueMenu,
+         LeftContainer,
+          NavContainer,
+           RightContainer,
+           LinkContainer,
+            BrandContainer,
+            MobileMenu } from './styles'
 import brandlogo from '../../assets/brandlogo.png'
 
 
@@ -20,23 +27,26 @@ const Navbar = () => {
         <>
             <NavContainer>
                 <LeftContainer>
-                    <Link href="/">Pagina Inicial</Link>
-                    <Link href="/apod">Imagem do Dia</Link>
+                    <Link href="/"><LinkContainer>Pagina Inicial</LinkContainer></Link>
+                    <Link href="/apod"><LinkContainer>Imagem do Dia</LinkContainer></Link>
                 </LeftContainer>
                 <RightContainer>
                     <BurgueMenu onClick={handleMobileToggle}>{mobileMenu ? closeIcon : burguerIcon}</BurgueMenu>
-                    <Brand 
-                        width={50}
-                        height={50}
-                        src={brandlogo} alt="SIS Web Logo" />
+                    <BrandContainer>
+                        <Image 
+                            width={50}
+                            height={50}
+                            layout='fixed'
+                            src={brandlogo} alt="SIS Web Logo" />
+                        </BrandContainer>
                 </RightContainer>  
             </NavContainer>
             <MobileMenu menuToggle ={mobileMenu}>
-                    <Link href="/" >
-                        <a onClick={handleMobileToggle}>Pagina Inicial</a>
-                    </Link>
+                        <Link href="/" >
+                            <a onClick={handleMobileToggle}><LinkContainer>Pagina Inicial</LinkContainer></a>
+                        </Link>
                     <Link href="/apod">
-                        <a onClick={handleMobileToggle}>Imagem do Dia</a>
+                        <a onClick={handleMobileToggle}><LinkContainer>Imagem do Dia</LinkContainer></a>
                     </Link>
             </MobileMenu>
         </>

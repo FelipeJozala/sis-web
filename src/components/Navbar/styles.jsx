@@ -90,9 +90,7 @@ export const MobileMenu = styled.div`
 
     a {
         color: ${({theme})=> theme.text};
-        padding: 1rem;
         font-size: 1.4rem;
-        margin-left: 10px;
     }
     
     @media only screen and (min-width: 768px) {
@@ -101,9 +99,31 @@ export const MobileMenu = styled.div`
 
     }
 ` 
+export const LinkContainer = styled.div`
+    width: 100vw;
+    text-align: center;
+    padding: 2vh;
 
+    :hover {
+            background: ${({theme}) => theme.secondary};
+        } 
+
+    @media only screen and (min-width: 768px) {
+        display: flex;
+        width: 170px;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+
+        
+        
+    }
+    
+`
 export const Brand = styled(Image)`
-    height: 100%;
-    margin-right: 30px;
 
+`
+
+export const BrandContainer = styled.div`
+    padding-right: 30px;
 `
