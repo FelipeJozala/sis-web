@@ -29,9 +29,10 @@ export const RightContainer = styled.div`
     @media only screen and (min-width: 768px) {
 
         display: flex;
-        width: 50%;
+        width: 49%;
         justify-content: flex-end;
         margin-right: 80px;
+        margin: 0;
     }
 `
 
@@ -44,7 +45,7 @@ export const LeftContainer = styled.div`
         display: flex;
         flex-direction: row;
         align-items: center;
-        width: 50%;
+        width: 49%;
         height: 72px;
         margin-top: 0;
         
@@ -106,24 +107,36 @@ export const LinkContainer = styled.div`
 
     :hover {
             background: ${({theme}) => theme.secondary};
-        } 
+    } 
 
     @media only screen and (min-width: 768px) {
         display: flex;
         width: 170px;
         height: 100%;
         align-items: center;
-        justify-content: center;
-
-        
+        justify-content: center; 
         
     }
     
 `
-export const Brand = styled(Image)`
 
+export const DesktopBrandContainer = styled.div`
+    visibility: hidden;
+
+    @media only screen and (min-width: 768px) {
+        padding-right: 30px;
+        visibility: visible;
+        
+    }
 `
 
-export const BrandContainer = styled.div`
+export const MobileBrandContainer = styled.div`
+    visibility: visible;
     padding-right: 30px;
+
+    @media only screen and (min-width: 768px) {
+        
+        visibility: hidden;
+        
+    }
 `

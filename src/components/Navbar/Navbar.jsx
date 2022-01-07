@@ -6,7 +6,8 @@ import { BurgueMenu,
           NavContainer,
            RightContainer,
            LinkContainer,
-            BrandContainer,
+            DesktopBrandContainer,
+            MobileBrandContainer,
             MobileMenu } from './styles'
 import brandlogo from '../../assets/brandlogo.png'
 
@@ -27,18 +28,25 @@ const Navbar = () => {
         <>
             <NavContainer>
                 <LeftContainer>
-                    <Link href="/"><LinkContainer>Pagina Inicial</LinkContainer></Link>
-                    <Link href="/apod"><LinkContainer>Imagem do Dia</LinkContainer></Link>
-                </LeftContainer>
-                <RightContainer>
-                    <BurgueMenu onClick={handleMobileToggle}>{mobileMenu ? closeIcon : burguerIcon}</BurgueMenu>
-                    <BrandContainer>
+                    <DesktopBrandContainer>
                         <Image 
                             width={50}
                             height={50}
                             layout='fixed'
                             src={brandlogo} alt="SIS Web Logo" />
-                        </BrandContainer>
+                        </DesktopBrandContainer>
+                    <Link href="/"><LinkContainer>Pagina Inicial</LinkContainer></Link>
+                    <Link href="/apod"><LinkContainer>Imagem do Dia</LinkContainer></Link>
+                </LeftContainer>
+                <RightContainer>
+                    <BurgueMenu onClick={handleMobileToggle}>{mobileMenu ? closeIcon : burguerIcon}</BurgueMenu>
+                    <MobileBrandContainer>
+                        <Image 
+                            width={50}
+                            height={50}
+                            layout='fixed'
+                            src={brandlogo} alt="SIS Web Logo" />
+                        </MobileBrandContainer>
                 </RightContainer>  
             </NavContainer>
             <MobileMenu menuToggle ={mobileMenu}>

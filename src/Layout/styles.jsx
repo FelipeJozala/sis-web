@@ -8,7 +8,7 @@ export const MainContainer = styled.div`
     flex-direction: column;
     align-items: center;
     height: fit-content;
-    width: 80%;
+    width: 80vw;
     margin: 5vh auto;
     font-family: 'Poppins', sans-serif;
 

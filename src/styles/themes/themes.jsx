@@ -4,6 +4,7 @@ export const Light = {
     secondary: '#A939DC',
     background: '#f5f5f5',
     text: '#333',
+    card: '#979dac'
 
 };
 
@@ -13,5 +14,6 @@ export const Dark = {
     secondary: '#A939DC',
     background: '#333',
     text: '#f5f5f5',
+    card: '#979dac'
 
 };

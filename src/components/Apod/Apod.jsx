@@ -1,18 +1,22 @@
 import React from 'react'
 import Image from "next/image";
-import { ApodTittle , NasaImage } from './styles';
+import { ApodFieldSet, 
+        PageTittle,
+        ApodTittle ,
+        NasaImage, 
+        StyledList} from './styles';
 
 const Apod = ({img}) => {
     return (
-        <>
-            <ApodTittle>Imagem do Dia</ApodTittle>
-            <p><strong>{img.title}</strong></p>
-             <ul>
+        <ApodFieldSet>
+            <PageTittle>Imagem do Dia</PageTittle>
+            <ApodTittle>{img.title}</ApodTittle>
+             <StyledList>
                 <li>Data: {img.date}</li>
                 <li>Imagem por: {img.copyright}</li>
-            </ul>
+            </StyledList>
         <NasaImage src={img.hdurl} alt={img.title} />
-        </>
+        </ApodFieldSet>
     )
 }
 

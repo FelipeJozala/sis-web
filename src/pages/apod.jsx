@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Apod from "../components/Apod/Apod";
 
 export default function apod({img}) {
@@ -16,7 +15,7 @@ export const getStaticProps = async () => {
         props: {
             img: data,
         },
-        revalidate: 10800  
+        revalidate: 5 
     }
     
 };

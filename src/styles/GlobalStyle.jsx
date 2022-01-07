@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 
 
     body {
-        width: 100vw;
+        width: 100%;
         background:${({ theme }) => theme.background};
         font-size: 1rem;
         color: ${({ theme }) => theme.text};
