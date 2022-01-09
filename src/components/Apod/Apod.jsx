@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from "next/image";
-import { ApodFieldSet, 
+import { ApodContainer,
+        InfoContainner, 
         PageTittle,
         ApodTittle ,
         NasaImage, 
@@ -8,15 +9,18 @@ import { ApodFieldSet,
 
 const Apod = ({img}) => {
     return (
-        <ApodFieldSet>
-            <PageTittle>Imagem do Dia</PageTittle>
+        <ApodContainer src={img.hdurl} alt={img.title}>
+        <InfoContainner>
+        <PageTittle>Imagem do Dia</PageTittle>
             <ApodTittle>{img.title}</ApodTittle>
              <StyledList>
                 <li>Data: {img.date}</li>
                 <li>Imagem por: {img.copyright}</li>
             </StyledList>
+        </InfoContainner >          
         <NasaImage src={img.hdurl} alt={img.title} />
-        </ApodFieldSet>
+        </ApodContainer>
+        
     )
 }
 

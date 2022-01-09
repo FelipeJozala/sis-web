@@ -1,13 +1,21 @@
 import styled from "styled-components";
 
-export const ApodFieldSet = styled.fieldset`
-    border-color: ${({theme})=> theme.text};
+export const ApodContainer = styled.div`
+    background: ${({theme})=> theme.glassBase};
+    backdrop-filter: blur(20px);
+    box-shadow: 20px 20px 22px rgba(0,0,0,0.2);
     border-radius: 8px;
-    padding: 1rem;
+    width: 95%;
+
+`
+
+export const InfoContainner = styled.div`
+    background: ${({theme})=> theme.primary};
+    border-radius: 8px 8px 0px 0px;
 `
 
 export const PageTittle = styled.legend`
-    color: ${({theme})=> theme.secondary};
+    color: ${({theme})=> theme.text};
     font-size: 1.5rem;
     font-weight: bold;
     padding: 5px;
@@ -29,7 +37,7 @@ export const StyledList = styled.ul`
 
 export const NasaImage= styled.img`
     max-height: 100vh;
-    max-width: 100%;
+    max-width: 90%;
     border-radius: 8px;
-    margin-top: 10px;
+    margin: 0 auto;
 `

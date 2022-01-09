@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const NavContainer = styled.div`
 
-    background: ${({theme})=> theme.primary};
+    background: none;
     width: 100%;
     padding: 0;
     display: flex;
