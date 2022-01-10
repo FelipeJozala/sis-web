@@ -11,7 +11,8 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         width: 100%;
-        background:${({ theme }) => theme.background};
+        background:${({ theme }) => theme.background} fixed;
+        
         font-size: 1rem;
         color: ${({ theme }) => theme.text};
         font-family: sans-serif;

@@ -9,7 +9,9 @@ export const MainContainer = styled.div`
     align-items: center;
     height: fit-content;
     width: 80vw;
-    margin: 5vh auto;
+    height: calc(100vh - 72px);
+    margin: auto;
+    padding-top: 5vh;
     font-family: 'Poppins', sans-serif;
 
 `
