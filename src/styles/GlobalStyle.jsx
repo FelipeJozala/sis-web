@@ -8,15 +8,16 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
-
-    body {
-        width: 100%;
-        background:${({ theme }) => theme.background} fixed;
-        
+    html {
+        background:${({ theme }) => theme.colors.background} fixed;
         font-size: 1rem;
-        color: ${({ theme }) => theme.text};
+        color: ${({ theme }) => theme.colors.text};
         font-family: sans-serif;
         letter-spacing: 1.5px;
+    }
+
+    body {
+        width: 100%; 
     }
 
     ul, a {

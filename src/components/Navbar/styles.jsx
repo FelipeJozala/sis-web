@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Image from "next/image";
 
 export const NavContainer = styled.div`
 
@@ -8,35 +7,33 @@ export const NavContainer = styled.div`
     padding: 0;
     display: flex;
     flex-direction: column;
+    margin-top: 0px;
 
     @media only screen and (min-width: 768px) {
 
         flex-direction: row;
         justify-content: flex-end;
-   }
+    }
 `
 
-export const RightContainer = styled.div`
-
+export const MobileNav = styled.div`
+    background: ${({theme})=> theme.glassBase.background};
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur( 4px );
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
     width: 100%;
-    height: 72px;
+    height: 62px;
 
     @media only screen and (min-width: 768px) {
-
-        display: flex;
-        width: 49%;
-        justify-content: flex-end;
-        margin-right: 80px;
-        margin: 0;
+        display: none;
     }
 `
 
-export const LeftContainer = styled.div`
+export const DesktopNav = styled.div`
 
     display: none;
 
@@ -45,17 +42,10 @@ export const LeftContainer = styled.div`
         display: flex;
         flex-direction: row;
         align-items: center;
-        width: 49%;
-        height: 72px;
+        justify-content: center;
+        width: 100%;
+        height: 62px;
         margin-top: 0;
-        
-
-        a {
-            color: ${({theme})=> theme.text};
-            padding: 0.5rem;
-            font-size: 1rem;
-            margin-left: 10px;
-        }
    }
 `
 
@@ -67,7 +57,7 @@ export const BurgueMenu = styled.button`
     text-justify: auto;
     text-align: center;
     font-size: 45px;
-    color: ${({theme})=> theme.text};
+    color: ${({theme})=> theme.colors.text};
     margin-left: 10px;
 
     @media only screen and (min-width: 768px) {
@@ -78,7 +68,9 @@ export const BurgueMenu = styled.button`
 
 export const MobileMenu = styled.div`
 
-    background: ${({theme})=> theme.primary};
+    background: ${({theme})=> theme.glassBase.background};
+    backdrop-filter: ${({theme})=> theme.glassBase.backdropFilter};
+    -webkit-backdrop-filter: ${({theme})=> theme.glassBase.webkitFilter};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,7 +82,7 @@ export const MobileMenu = styled.div`
     
 
     a {
-        color: ${({theme})=> theme.text};
+        color: ${({theme})=> theme.colors.text};
         font-size: 1.4rem;
     }
     
@@ -105,38 +97,39 @@ export const LinkContainer = styled.div`
     text-align: center;
     padding: 2vh;
 
-    :hover {
-            background: ${({theme}) => theme.secondary};
-    } 
+    
 
     @media only screen and (min-width: 768px) {
         display: flex;
-        width: 170px;
-        height: 100%;
+        width: fit-content;
+        height: 60%;
         align-items: center;
         justify-content: center; 
-        
+        margin: 0 10px;
+        position: relative;
+
+        ::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: ${({theme})=> theme.colors.secondary};
+            bottom: 5px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 200ms ease-in;
+            
+        }
+
+        :hover {
+
+            ::after{
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+        }
+    
     }
     
-`
-
-export const DesktopBrandContainer = styled.div`
-    visibility: hidden;
-
-    @media only screen and (min-width: 768px) {
-        padding-right: 30px;
-        visibility: visible;
-        
-    }
-`
-
-export const MobileBrandContainer = styled.div`
-    visibility: visible;
-    padding-right: 30px;
-
-    @media only screen and (min-width: 768px) {
-        
-        visibility: hidden;
-        
-    }
 `

@@ -6,8 +6,7 @@ import { ApodContainer,
         NasaImage,
         VideoFrame, 
         StyledList,
-        IconContainer,
-        DownIcon } from './styles';
+        MediaContainer } from './styles';
 
 const Apod = ({img}) => {
 
@@ -20,18 +19,16 @@ const Apod = ({img}) => {
 
     return (
         <ApodContainer>
+            <MediaContainer>
+                {mediaType === 'image' ? <NasaImage src={img.hdurl} alt={img.title} /> : <VideoFrame src={img.url}  width="100%" height="100%" frameBorder='0' allow='encrypted-media' allowFullScreen/> }      
+            </MediaContainer>
             <InfoContainner>
-                <PageTittle>Imagem do Dia</PageTittle>
-                    <ApodTittle>{img.title}</ApodTittle>
-                    <StyledList>
-                        <li>Data: {img.date}</li>
-                        <li>Imagem por: {img.copyright}</li>
-                    </StyledList>
+                <ApodTittle>{img.title}</ApodTittle>
+                <StyledList>
+                    <li>Data: {img.date}</li>
+                    <li>Imagem por: {img.copyright}</li>
+                </StyledList>
             </InfoContainner>
-            <IconContainer>
-                <DownIcon/> 
-            </IconContainer>
-            {mediaType === 'image' ? <NasaImage src={img.hdurl} alt={img.title} /> : <VideoFrame src={img.url}  width="100%" height="100%" frameBorder='0' allow='encrypted-media' allowFullScreen/> }      
         </ApodContainer>
     )
 }

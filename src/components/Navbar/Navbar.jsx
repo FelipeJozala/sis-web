@@ -1,15 +1,12 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
-import Image from "next/image";
-import { BurgueMenu,
-         LeftContainer,
-          NavContainer,
-           RightContainer,
-           LinkContainer,
-            DesktopBrandContainer,
-            MobileBrandContainer,
-            MobileMenu } from './styles'
-import brandlogo from '../../assets/brandlogo.png'
+import {
+        NavContainer, 
+        BurgueMenu,
+        DesktopNav,
+        MobileNav,
+        LinkContainer,
+        MobileMenu } from './styles'
 
 
 const Navbar = () => {
@@ -27,21 +24,29 @@ const Navbar = () => {
     return (
         <>
             <NavContainer>
-                <LeftContainer>
+                <DesktopNav>
                     <Link href="/"><LinkContainer>Home</LinkContainer></Link>
                     <Link href="/apod"><LinkContainer>Imagem do Dia</LinkContainer></Link>
-                </LeftContainer>
-                <RightContainer>
+                    <Link href="/launch"><LinkContainer>Lançamentos</LinkContainer></Link>
+                    <Link href="/starship"><LinkContainer>StarShip</LinkContainer></Link>
+                </DesktopNav>
+                <MobileNav>
                     <BurgueMenu onClick={handleMobileToggle}>{mobileMenu ? closeIcon : burguerIcon}</BurgueMenu>
-                </RightContainer>  
+                </MobileNav>  
             </NavContainer>
             <MobileMenu menuToggle ={mobileMenu}>
-                        <Link href="/" >
-                            <a onClick={handleMobileToggle}><LinkContainer>Pagina Inicial</LinkContainer></a>
-                        </Link>
-                    <Link href="/apod">
-                        <a onClick={handleMobileToggle}><LinkContainer>Imagem do Dia</LinkContainer></a>
-                    </Link>
+                <Link href="/" >
+                    <a onClick={handleMobileToggle}><LinkContainer>Pagina Inicial</LinkContainer></a>
+                </Link>
+                <Link href="/apod">
+                    <a onClick={handleMobileToggle}><LinkContainer>Imagem do Dia</LinkContainer></a>
+                </Link>
+                <Link href="/launch">
+                    <a onClick={handleMobileToggle}><LinkContainer>Launch</LinkContainer></a>
+                </Link>
+                <Link href="/starship">
+                    <a onClick={handleMobileToggle}><LinkContainer>Starship</LinkContainer></a>
+                </Link>
             </MobileMenu>
         </>
     )
