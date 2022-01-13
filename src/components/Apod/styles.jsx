@@ -15,7 +15,6 @@ export const ApodContainer = styled.div`
     
     @media only screen and (min-width: 768px) {
         padding: 0;
-        max-height: 90%;
 
     }
 `
@@ -74,6 +73,10 @@ export const NasaImage= styled.img`
     max-width: 100%;
     border-radius: 8px;
     margin: 0 auto;
+
+    @media only screen and (min-width: 768px) {
+        max-height: 80vh;
+    }
 
 `
 

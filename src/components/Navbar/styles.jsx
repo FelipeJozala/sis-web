@@ -59,6 +59,7 @@ export const BurgueMenu = styled.button`
     font-size: 45px;
     color: ${({theme})=> theme.colors.text};
     margin-left: 10px;
+    cursor: pointer;
 
     @media only screen and (min-width: 768px) {
 
@@ -74,12 +75,12 @@ export const MobileMenu = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: calc(100vh - 72px);
+    height: calc(100vh - 62px);
     width: 100vw;
     position: absolute;
     padding-top: 25px;
     visibility: ${props => props.menuToggle ? 'visible' : 'hidden'};
-    
+    z-index: 1;
 
     a {
         color: ${({theme})=> theme.colors.text};
@@ -96,6 +97,7 @@ export const LinkContainer = styled.div`
     width: 100vw;
     text-align: center;
     padding: 2vh;
+    cursor: pointer;
 
     
 
