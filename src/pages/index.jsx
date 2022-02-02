@@ -5,7 +5,7 @@ import { GridContainer } from "../components/GridSection/style";
 import GridBanner from "../components/GridBanner/GridBanner";
 let data = require('../../response.json')
 
-export default function Home({ eventsInfo }) {
+export default function Home({ eventsInfo, stationsInfo }) {
 	
 	return (
 		<div>
@@ -20,7 +20,7 @@ export default function Home({ eventsInfo }) {
 				<GridContainer>
 				{eventsInfo.map(eventInfo => (
 					<Link key={eventInfo.id} href={`./events/${eventInfo.id}` } passHref>
-						<GridBanner eventInfo={eventInfo}/>
+						<GridBanner img={eventInfo.feature_image} title={eventInfo.name}/>
 					</Link>
 				))}
 				</GridContainer>
@@ -28,6 +28,13 @@ export default function Home({ eventsInfo }) {
 			<section>
 				<h2>Estações Espaciais</h2>
 				<hr />
+				<GridContainer>
+				{stationsInfo.map(stationInfo => (
+					<Link key={stationInfo.id} href={`./events/${stationInfo.id}` } passHref>
+						<GridBanner img={stationInfo.image_url} title={stationInfo.name}/>
+					</Link>
+				))}
+				</GridContainer>
 			</section>
 		</div> 
 	)
@@ -39,11 +46,12 @@ export const getStaticProps = async () => {
 		const eventsResponse = await fetch('https://ll.thespacedevs.com/2.2.0/event/upcoming/?limit=3')
 		const eventsData = await eventsResponse.json();
 
-		// const stationsResponse = await fetch(`https://ll.thespacedevs.com/2.2.0/spacestation/?status=1`);
-		// const stationsData = await stationsResponse.json();
+		const stationsResponse = await fetch(`https://ll.thespacedevs.com/2.2.0/spacestation/?status=1`);
+		const stationsData = await stationsResponse.json();
 
 		return {
-			props: { eventsInfo: eventsData.results },
+			props: { eventsInfo: eventsData.results,
+					stationsInfo: stationsData.results  },
 			revalidate: 5 
 		}
 		

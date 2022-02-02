@@ -1,14 +1,14 @@
 import React from 'react'
 import { Banner, BannerImage, BannerTittle, ImgContainner, TextContainner } from './style'
 
-const GridBanner = ({eventInfo}) => {
+const GridBanner = ({ img,title }) => {
     return (
         <Banner>
             <ImgContainner>
-                <BannerImage src={eventInfo.feature_image} alt="Imagem da NASA"/>
+                <BannerImage src={img} alt="Imagem da NASA"/>
             </ImgContainner>
                 <TextContainner>
-                    <BannerTittle>{eventInfo.name}</BannerTittle>
+                    <BannerTittle>{title}</BannerTittle>
                 </TextContainner>
         </Banner>
     )
