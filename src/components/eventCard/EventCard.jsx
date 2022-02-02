@@ -1,6 +1,6 @@
 import React from 'react'
 
-const starship = () => {
+const EventCard = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const starship = () => {
     )
 }
 
-export default starship
+export default EventCard

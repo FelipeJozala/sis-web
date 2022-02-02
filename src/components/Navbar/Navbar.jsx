@@ -28,7 +28,6 @@ const Navbar = () => {
                     <Link href="/"><LinkContainer>Home</LinkContainer></Link>
                     <Link href="/apod"><LinkContainer>Imagem do Dia</LinkContainer></Link>
                     <Link href="/launch"><LinkContainer>Lançamentos</LinkContainer></Link>
-                    <Link href="/starship"><LinkContainer>StarShip</LinkContainer></Link>
                 </DesktopNav>
                 <MobileNav>
                     <BurgueMenu onClick={handleMobileToggle}>{mobileMenu ? closeIcon : burguerIcon}</BurgueMenu>
@@ -43,9 +42,6 @@ const Navbar = () => {
                 </Link>
                 <Link href="/launch">
                     <a onClick={handleMobileToggle}><LinkContainer>Launch</LinkContainer></a>
-                </Link>
-                <Link href="/starship">
-                    <a onClick={handleMobileToggle}><LinkContainer>Starship</LinkContainer></a>
                 </Link>
             </MobileMenu>
         </>

@@ -18,8 +18,8 @@ export const NavContainer = styled.div`
 
 export const MobileNav = styled.div`
     background: ${({theme})=> theme.glassBase.background};
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur( 4px );
+    backdrop-filter: ${({theme})=> theme.glassBase.backdropFilter};
+    -webkit-backdrop-filter: ${({theme})=> theme.glassBase.webkitFilter};
     display: flex;
     flex-direction: row;
     align-items: center;

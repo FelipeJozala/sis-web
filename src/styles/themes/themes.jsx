@@ -3,7 +3,7 @@ export const Light = {
     colors: {
         primary: '#0D406E',
         secondary: '#0C5697',
-        background: '#f5f5f5',
+        background: 'linear-gradient(to right, #ece9e6, #ffffff)',
         text: '#333',
     },
     glassBase: {

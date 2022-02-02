@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
         props: {
             nextLaunches: data.results,
         },
-        revalidate: 10 
+        revalidate: 5 
     }
     
 };
